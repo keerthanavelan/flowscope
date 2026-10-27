@@ -1,3 +1,5 @@
+> Updated dashboard: see [RESEARCH_FEATURES.md](RESEARCH_FEATURES.md) for the six-policy research extension and current environment setup. The original dashboard guide below describes the earlier five-policy version.
+
 # FlowScope — local SDN monitoring dashboard
 
 Flask + HTML/CSS/vanilla JavaScript, with Chart.js 4.5.1 served locally and an interactive SVG topology. No frontend build, Node runtime, CDN connection, or Mininet is needed to run the dashboard. Existing policy code, simulation code, original CLI tools and saved experiment results are untouched.

@@ -1,0 +1,20 @@
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:32px}
+.sidebar-header .brand{font-size:20px;gap:8px}.sidebar-header .brand-mark{font-size:26px}
+.sidebar-toggle{flex-shrink:0;display:grid;place-items:center;width:30px;height:30px;padding:0;border:1px solid #426356;border-radius:6px;background:transparent;color:#bce0ce;cursor:pointer}
+.sidebar-toggle:hover{background:#2d5145}.sidebar-toggle svg{width:17px;height:17px}
+.sidebar .nav-label{font:inherit;line-height:inherit;width:auto}
+.sidebar-collapsed .sidebar{width:72px;padding:26px 12px}
+.sidebar-collapsed main{margin-left:72px}
+.sidebar-collapsed .sidebar-header{flex-direction:column;gap:20px}
+.sidebar-collapsed .brand-name,.sidebar-collapsed .nav-label{display:none}
+.sidebar-collapsed .nav-item{justify-content:center;padding:13px 0;gap:0;font-size:0}
+.sidebar-collapsed .nav-item>span:first-child{display:block;font-size:23px;width:24px;text-align:center}
+.sidebar-collapsed .sidebar-toggle svg{transform:rotate(180deg)}
+@media(max-width:600px){
+  .sidebar-header{margin-bottom:0}.sidebar-header .brand{font-size:21px}
+  .sidebar-collapsed .sidebar{width:100%;padding:15px 16px}
+  .sidebar-collapsed main{margin-left:0}
+  .sidebar-collapsed .sidebar-header{flex-direction:row}
+  .sidebar-collapsed .brand-name{display:inline}
+  .sidebar-collapsed .sidebar nav{display:none}
+}

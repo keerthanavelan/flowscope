@@ -1,0 +1,2451 @@
+{
+  "schema_version": 1,
+  "config": {
+    "scenario": "single",
+    "seed": 7,
+    "flow_count": 6,
+    "policy": "audited_hybrid",
+    "audit_interval": 8
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "runs": [
+    {
+      "seed": 0,
+      "run_id": "1fa6ea2c7b",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 21,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 4,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.875,
+            "recall": 0.84,
+            "f1": 0.8571428571428571,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 68,
+              "end": 93,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 21,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 4,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.875,
+            "recall": 0.84,
+            "f1": 0.8571428571428571,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 68,
+              "end": 93,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 21,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 4,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.875,
+            "recall": 0.84,
+            "f1": 0.8571428571428571,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 68,
+              "end": 93,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 21,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 4,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.875,
+            "recall": 0.84,
+            "f1": 0.8571428571428571,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 68,
+              "end": 93,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 21,
+            "fp": 7,
+            "tn": 1048,
+            "fn": 4,
+            "accuracy": 0.9898148148148148,
+            "precision": 0.75,
+            "recall": 0.84,
+            "f1": 0.7924528301886793,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 68,
+              "end": 93,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 107,
+            "messages": 214,
+            "records": 144,
+            "modeled_bytes": 11456,
+            "tp": 21,
+            "fp": 7,
+            "tn": 1048,
+            "fn": 4,
+            "accuracy": 0.9898148148148148,
+            "precision": 0.75,
+            "recall": 0.84,
+            "f1": 0.7924528301886793,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 68,
+              "end": 93,
+              "delay_s": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "run_id": "b36c72fd9b",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 22,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 3,
+            "accuracy": 0.9953703703703703,
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1": 0.8979591836734694,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 61,
+              "end": 86,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 22,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 3,
+            "accuracy": 0.9953703703703703,
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1": 0.8979591836734694,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 61,
+              "end": 86,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 14,
+            "fp": 10,
+            "tn": 1045,
+            "fn": 11,
+            "accuracy": 0.9805555555555555,
+            "precision": 0.5833333333333334,
+            "recall": 0.56,
+            "f1": 0.5714285714285714,
+            "mean_detection_delay_s": 11.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 61,
+              "end": 86,
+              "delay_s": 11
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 14,
+            "fp": 10,
+            "tn": 1045,
+            "fn": 11,
+            "accuracy": 0.9805555555555555,
+            "precision": 0.5833333333333334,
+            "recall": 0.56,
+            "f1": 0.5714285714285714,
+            "mean_detection_delay_s": 11.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 61,
+              "end": 86,
+              "delay_s": 11
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 14,
+            "fp": 14,
+            "tn": 1041,
+            "fn": 11,
+            "accuracy": 0.9768518518518519,
+            "precision": 0.5,
+            "recall": 0.56,
+            "f1": 0.5283018867924528,
+            "mean_detection_delay_s": 11.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 61,
+              "end": 86,
+              "delay_s": 11
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 108,
+            "messages": 216,
+            "records": 144,
+            "modeled_bytes": 11520,
+            "tp": 22,
+            "fp": 6,
+            "tn": 1049,
+            "fn": 3,
+            "accuracy": 0.9916666666666667,
+            "precision": 0.7857142857142857,
+            "recall": 0.88,
+            "f1": 0.8301886792452831,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 61,
+              "end": 86,
+              "delay_s": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "run_id": "70dbe06ab3",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 23,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 2,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.9583333333333334,
+            "recall": 0.92,
+            "f1": 0.9387755102040817,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 62,
+              "end": 87,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 23,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 2,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.9583333333333334,
+            "recall": 0.92,
+            "f1": 0.9387755102040817,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 62,
+              "end": 87,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 15,
+            "fp": 9,
+            "tn": 1046,
+            "fn": 10,
+            "accuracy": 0.9824074074074074,
+            "precision": 0.625,
+            "recall": 0.6,
+            "f1": 0.6122448979591837,
+            "mean_detection_delay_s": 10.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 62,
+              "end": 87,
+              "delay_s": 10
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 15,
+            "fp": 9,
+            "tn": 1046,
+            "fn": 10,
+            "accuracy": 0.9824074074074074,
+            "precision": 0.625,
+            "recall": 0.6,
+            "f1": 0.6122448979591837,
+            "mean_detection_delay_s": 10.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 62,
+              "end": 87,
+              "delay_s": 10
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 15,
+            "fp": 13,
+            "tn": 1042,
+            "fn": 10,
+            "accuracy": 0.9787037037037037,
+            "precision": 0.5357142857142857,
+            "recall": 0.6,
+            "f1": 0.5660377358490566,
+            "mean_detection_delay_s": 10.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 62,
+              "end": 87,
+              "delay_s": 10
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 108,
+            "messages": 216,
+            "records": 144,
+            "modeled_bytes": 11520,
+            "tp": 23,
+            "fp": 5,
+            "tn": 1050,
+            "fn": 2,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.8214285714285714,
+            "recall": 0.92,
+            "f1": 0.8679245283018868,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 62,
+              "end": 87,
+              "delay_s": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "run_id": "f644a915c9",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 25,
+            "fp": 7,
+            "tn": 1048,
+            "fn": 0,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.78125,
+            "recall": 1.0,
+            "f1": 0.8771929824561403,
+            "mean_detection_delay_s": 0.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 56,
+              "end": 81,
+              "delay_s": 0
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 25,
+            "fp": 7,
+            "tn": 1048,
+            "fn": 0,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.78125,
+            "recall": 1.0,
+            "f1": 0.8771929824561403,
+            "mean_detection_delay_s": 0.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 56,
+              "end": 81,
+              "delay_s": 0
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 25,
+            "fp": 15,
+            "tn": 1040,
+            "fn": 0,
+            "accuracy": 0.9861111111111112,
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693,
+            "mean_detection_delay_s": 0.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 56,
+              "end": 81,
+              "delay_s": 0
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 25,
+            "fp": 15,
+            "tn": 1040,
+            "fn": 0,
+            "accuracy": 0.9861111111111112,
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693,
+            "mean_detection_delay_s": 0.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 56,
+              "end": 81,
+              "delay_s": 0
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 25,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 0,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.8928571428571429,
+            "recall": 1.0,
+            "f1": 0.9433962264150944,
+            "mean_detection_delay_s": 0.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 56,
+              "end": 81,
+              "delay_s": 0
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 107,
+            "messages": 214,
+            "records": 144,
+            "modeled_bytes": 11456,
+            "tp": 25,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 0,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.8928571428571429,
+            "recall": 1.0,
+            "f1": 0.9433962264150944,
+            "mean_detection_delay_s": 0.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 56,
+              "end": 81,
+              "delay_s": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 4,
+      "run_id": "e883c0cea2",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 22,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 3,
+            "accuracy": 0.9953703703703703,
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1": 0.8979591836734694,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 69,
+              "end": 94,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 22,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 3,
+            "accuracy": 0.9953703703703703,
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1": 0.8979591836734694,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 69,
+              "end": 94,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 22,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 3,
+            "accuracy": 0.9953703703703703,
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1": 0.8979591836734694,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 69,
+              "end": 94,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 22,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 3,
+            "accuracy": 0.9953703703703703,
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1": 0.8979591836734694,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 69,
+              "end": 94,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 22,
+            "fp": 6,
+            "tn": 1049,
+            "fn": 3,
+            "accuracy": 0.9916666666666667,
+            "precision": 0.7857142857142857,
+            "recall": 0.88,
+            "f1": 0.8301886792452831,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 69,
+              "end": 94,
+              "delay_s": 3
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 107,
+            "messages": 214,
+            "records": 144,
+            "modeled_bytes": 11456,
+            "tp": 22,
+            "fp": 6,
+            "tn": 1049,
+            "fn": 3,
+            "accuracy": 0.9916666666666667,
+            "precision": 0.7857142857142857,
+            "recall": 0.88,
+            "f1": 0.8301886792452831,
+            "mean_detection_delay_s": 3.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 69,
+              "end": 94,
+              "delay_s": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 5,
+      "run_id": "cdc2744d63",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 20,
+            "fp": 4,
+            "tn": 1051,
+            "fn": 5,
+            "accuracy": 0.9916666666666667,
+            "precision": 0.8333333333333334,
+            "recall": 0.8,
+            "f1": 0.8163265306122449,
+            "mean_detection_delay_s": 5.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 75,
+              "end": 100,
+              "delay_s": 5
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 20,
+            "fp": 4,
+            "tn": 1051,
+            "fn": 5,
+            "accuracy": 0.9916666666666667,
+            "precision": 0.8333333333333334,
+            "recall": 0.8,
+            "f1": 0.8163265306122449,
+            "mean_detection_delay_s": 5.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 75,
+              "end": 100,
+              "delay_s": 5
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 12,
+            "fp": 12,
+            "tn": 1043,
+            "fn": 13,
+            "accuracy": 0.9768518518518519,
+            "precision": 0.5,
+            "recall": 0.48,
+            "f1": 0.4897959183673469,
+            "mean_detection_delay_s": 13.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 75,
+              "end": 100,
+              "delay_s": 13
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 12,
+            "fp": 12,
+            "tn": 1043,
+            "fn": 13,
+            "accuracy": 0.9768518518518519,
+            "precision": 0.5,
+            "recall": 0.48,
+            "f1": 0.4897959183673469,
+            "mean_detection_delay_s": 13.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 75,
+              "end": 100,
+              "delay_s": 13
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 12,
+            "fp": 0,
+            "tn": 1055,
+            "fn": 13,
+            "accuracy": 0.9879629629629629,
+            "precision": 1.0,
+            "recall": 0.48,
+            "f1": 0.6486486486486487,
+            "mean_detection_delay_s": 13.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 75,
+              "end": 100,
+              "delay_s": 13
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 108,
+            "messages": 216,
+            "records": 144,
+            "modeled_bytes": 11520,
+            "tp": 20,
+            "fp": 0,
+            "tn": 1055,
+            "fn": 5,
+            "accuracy": 0.9953703703703703,
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.8888888888888888,
+            "mean_detection_delay_s": 5.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 75,
+              "end": 100,
+              "delay_s": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 6,
+      "run_id": "2f35df4571",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 18,
+            "fp": 6,
+            "tn": 1049,
+            "fn": 7,
+            "accuracy": 0.9879629629629629,
+            "precision": 0.75,
+            "recall": 0.72,
+            "f1": 0.7346938775510204,
+            "mean_detection_delay_s": 7.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 57,
+              "end": 82,
+              "delay_s": 7
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 18,
+            "fp": 6,
+            "tn": 1049,
+            "fn": 7,
+            "accuracy": 0.9879629629629629,
+            "precision": 0.75,
+            "recall": 0.72,
+            "f1": 0.7346938775510204,
+            "mean_detection_delay_s": 7.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 57,
+              "end": 82,
+              "delay_s": 7
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 10,
+            "fp": 14,
+            "tn": 1041,
+            "fn": 15,
+            "accuracy": 0.9731481481481481,
+            "precision": 0.4166666666666667,
+            "recall": 0.4,
+            "f1": 0.40816326530612246,
+            "mean_detection_delay_s": 15.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 57,
+              "end": 82,
+              "delay_s": 15
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 10,
+            "fp": 14,
+            "tn": 1041,
+            "fn": 15,
+            "accuracy": 0.9731481481481481,
+            "precision": 0.4166666666666667,
+            "recall": 0.4,
+            "f1": 0.40816326530612246,
+            "mean_detection_delay_s": 15.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 57,
+              "end": 82,
+              "delay_s": 15
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 10,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 15,
+            "accuracy": 0.9842592592592593,
+            "precision": 0.8333333333333334,
+            "recall": 0.4,
+            "f1": 0.5405405405405406,
+            "mean_detection_delay_s": 15.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 57,
+              "end": 82,
+              "delay_s": 15
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 108,
+            "messages": 216,
+            "records": 144,
+            "modeled_bytes": 11520,
+            "tp": 18,
+            "fp": 2,
+            "tn": 1053,
+            "fn": 7,
+            "accuracy": 0.9916666666666667,
+            "precision": 0.9,
+            "recall": 0.72,
+            "f1": 0.8,
+            "mean_detection_delay_s": 7.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 57,
+              "end": 82,
+              "delay_s": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "run_id": "d04c6a2ddb",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 19,
+            "fp": 5,
+            "tn": 1050,
+            "fn": 6,
+            "accuracy": 0.9898148148148148,
+            "precision": 0.7916666666666666,
+            "recall": 0.76,
+            "f1": 0.7755102040816326,
+            "mean_detection_delay_s": 6.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 58,
+              "end": 83,
+              "delay_s": 6
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 19,
+            "fp": 5,
+            "tn": 1050,
+            "fn": 6,
+            "accuracy": 0.9898148148148148,
+            "precision": 0.7916666666666666,
+            "recall": 0.76,
+            "f1": 0.7755102040816326,
+            "mean_detection_delay_s": 6.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 58,
+              "end": 83,
+              "delay_s": 6
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 11,
+            "fp": 13,
+            "tn": 1042,
+            "fn": 14,
+            "accuracy": 0.975,
+            "precision": 0.4583333333333333,
+            "recall": 0.44,
+            "f1": 0.4489795918367347,
+            "mean_detection_delay_s": 14.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 58,
+              "end": 83,
+              "delay_s": 14
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 11,
+            "fp": 13,
+            "tn": 1042,
+            "fn": 14,
+            "accuracy": 0.975,
+            "precision": 0.4583333333333333,
+            "recall": 0.44,
+            "f1": 0.4489795918367347,
+            "mean_detection_delay_s": 14.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 58,
+              "end": 83,
+              "delay_s": 14
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 11,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 14,
+            "accuracy": 0.9861111111111112,
+            "precision": 0.9166666666666666,
+            "recall": 0.44,
+            "f1": 0.5945945945945946,
+            "mean_detection_delay_s": 14.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 58,
+              "end": 83,
+              "delay_s": 14
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 108,
+            "messages": 216,
+            "records": 144,
+            "modeled_bytes": 11520,
+            "tp": 19,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 6,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.95,
+            "recall": 0.76,
+            "f1": 0.8444444444444444,
+            "mean_detection_delay_s": 6.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 58,
+              "end": 83,
+              "delay_s": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 8,
+      "run_id": "ec3c6283ab",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 23,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 2,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.9583333333333334,
+            "recall": 0.92,
+            "f1": 0.9387755102040817,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 54,
+              "end": 79,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 23,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 2,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.9583333333333334,
+            "recall": 0.92,
+            "f1": 0.9387755102040817,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 54,
+              "end": 79,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 23,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 2,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.9583333333333334,
+            "recall": 0.92,
+            "f1": 0.9387755102040817,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 54,
+              "end": 79,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 23,
+            "fp": 1,
+            "tn": 1054,
+            "fn": 2,
+            "accuracy": 0.9972222222222222,
+            "precision": 0.9583333333333334,
+            "recall": 0.92,
+            "f1": 0.9387755102040817,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 54,
+              "end": 79,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 23,
+            "fp": 5,
+            "tn": 1050,
+            "fn": 2,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.8214285714285714,
+            "recall": 0.92,
+            "f1": 0.8679245283018868,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 54,
+              "end": 79,
+              "delay_s": 2
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 107,
+            "messages": 214,
+            "records": 144,
+            "modeled_bytes": 11456,
+            "tp": 23,
+            "fp": 5,
+            "tn": 1050,
+            "fn": 2,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.8214285714285714,
+            "recall": 0.92,
+            "f1": 0.8679245283018868,
+            "mean_detection_delay_s": 2.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 54,
+              "end": 79,
+              "delay_s": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 9,
+      "run_id": "a6beb7b8d3",
+      "results": [
+        {
+          "name": "fixed",
+          "metrics": {
+            "poll_transactions": 138,
+            "messages": 276,
+            "records": 138,
+            "modeled_bytes": 13248,
+            "tp": 21,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 4,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.875,
+            "recall": 0.84,
+            "f1": 0.8571428571428571,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 60,
+              "end": 85,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "fixed_path",
+          "metrics": {
+            "poll_transactions": 69,
+            "messages": 138,
+            "records": 138,
+            "modeled_bytes": 8832,
+            "tp": 21,
+            "fp": 3,
+            "tn": 1052,
+            "fn": 4,
+            "accuracy": 0.9935185185185185,
+            "precision": 0.875,
+            "recall": 0.84,
+            "f1": 0.8571428571428571,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 60,
+              "end": 85,
+              "delay_s": 4
+            }
+          ]
+        },
+        {
+          "name": "flow_adaptive",
+          "metrics": {
+            "poll_transactions": 73,
+            "messages": 146,
+            "records": 73,
+            "modeled_bytes": 7008,
+            "tp": 13,
+            "fp": 11,
+            "tn": 1044,
+            "fn": 12,
+            "accuracy": 0.9787037037037037,
+            "precision": 0.5416666666666666,
+            "recall": 0.52,
+            "f1": 0.5306122448979592,
+            "mean_detection_delay_s": 12.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 60,
+              "end": 85,
+              "delay_s": 12
+            }
+          ]
+        },
+        {
+          "name": "path_adaptive",
+          "metrics": {
+            "poll_transactions": 37,
+            "messages": 74,
+            "records": 74,
+            "modeled_bytes": 4736,
+            "tp": 13,
+            "fp": 11,
+            "tn": 1044,
+            "fn": 12,
+            "accuracy": 0.9787037037037037,
+            "precision": 0.5416666666666666,
+            "recall": 0.52,
+            "f1": 0.5306122448979592,
+            "mean_detection_delay_s": 12.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 60,
+              "end": 85,
+              "delay_s": 12
+            }
+          ]
+        },
+        {
+          "name": "hybrid",
+          "metrics": {
+            "poll_transactions": 45,
+            "messages": 90,
+            "records": 82,
+            "modeled_bytes": 5504,
+            "tp": 13,
+            "fp": 15,
+            "tn": 1040,
+            "fn": 12,
+            "accuracy": 0.975,
+            "precision": 0.4642857142857143,
+            "recall": 0.52,
+            "f1": 0.49056603773584906,
+            "mean_detection_delay_s": 12.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 60,
+              "end": 85,
+              "delay_s": 12
+            }
+          ]
+        },
+        {
+          "name": "audited_hybrid",
+          "metrics": {
+            "poll_transactions": 108,
+            "messages": 216,
+            "records": 144,
+            "modeled_bytes": 11520,
+            "tp": 21,
+            "fp": 7,
+            "tn": 1048,
+            "fn": 4,
+            "accuracy": 0.9898148148148148,
+            "precision": 0.75,
+            "recall": 0.84,
+            "f1": 0.7924528301886793,
+            "mean_detection_delay_s": 4.0,
+            "detected_events": 1,
+            "total_events": 1
+          },
+          "events": [
+            {
+              "flow": "f0",
+              "start": 60,
+              "end": 85,
+              "delay_s": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "aggregates": [
+    {
+      "name": "fixed",
+      "metrics": {
+        "poll_transactions": {
+          "mean": 138,
+          "stddev": 0.0,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 276,
+          "stddev": 0.0,
+          "min": 276,
+          "max": 276,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "stddev": 0.0,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 13248,
+          "stddev": 0.0,
+          "min": 13248,
+          "max": 13248,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "stddev": 2.0655911179772892,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 3.4,
+          "stddev": 2.0655911179772892,
+          "min": 1,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1051.6,
+          "stddev": 2.0655911179772892,
+          "min": 1048,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "stddev": 2.0655911179772892,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9935185185185185,
+          "stddev": 0.003024061410843434,
+          "min": 0.9879629629629629,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "stddev": 0.07421951144833568,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "stddev": 0.08262364471909157,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "stddev": 0.06695367141825756,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "stddev": 2.0655911179772892,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "total_events": 10,
+      "detected_events": 10,
+      "missed_events": 0,
+      "pooled_detection_delay_s": 3.6
+    },
+    {
+      "name": "fixed_path",
+      "metrics": {
+        "poll_transactions": {
+          "mean": 69,
+          "stddev": 0.0,
+          "min": 69,
+          "max": 69,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 138,
+          "stddev": 0.0,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "stddev": 0.0,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 8832,
+          "stddev": 0.0,
+          "min": 8832,
+          "max": 8832,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "stddev": 2.0655911179772892,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 3.4,
+          "stddev": 2.0655911179772892,
+          "min": 1,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1051.6,
+          "stddev": 2.0655911179772892,
+          "min": 1048,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "stddev": 2.0655911179772892,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9935185185185185,
+          "stddev": 0.003024061410843434,
+          "min": 0.9879629629629629,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "stddev": 0.07421951144833568,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "stddev": 0.08262364471909157,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "stddev": 0.06695367141825756,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "stddev": 2.0655911179772892,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "total_events": 10,
+      "detected_events": 10,
+      "missed_events": 0,
+      "pooled_detection_delay_s": 3.6
+    },
+    {
+      "name": "flow_adaptive",
+      "metrics": {
+        "poll_transactions": {
+          "mean": 73,
+          "stddev": 0.0,
+          "min": 73,
+          "max": 73,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 146,
+          "stddev": 0.0,
+          "min": 146,
+          "max": 146,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 73,
+          "stddev": 0.0,
+          "min": 73,
+          "max": 73,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 7008,
+          "stddev": 0.0,
+          "min": 7008,
+          "max": 7008,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "stddev": 5.561774297230456,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 9,
+          "stddev": 5.163977794943222,
+          "min": 1,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1046,
+          "stddev": 5.163977794943222,
+          "min": 1040,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "stddev": 5.561774297230456,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9838888888888889,
+          "stddev": 0.008764562641629062,
+          "min": 0.9731481481481481,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "stddev": 0.19661487076873765,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "stddev": 0.22247097188921824,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "stddev": 0.19673781052097572,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "stddev": 5.561774297230456,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "total_events": 10,
+      "detected_events": 10,
+      "missed_events": 0,
+      "pooled_detection_delay_s": 8.4
+    },
+    {
+      "name": "path_adaptive",
+      "metrics": {
+        "poll_transactions": {
+          "mean": 37,
+          "stddev": 0.0,
+          "min": 37,
+          "max": 37,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 74,
+          "stddev": 0.0,
+          "min": 74,
+          "max": 74,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 74,
+          "stddev": 0.0,
+          "min": 74,
+          "max": 74,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 4736,
+          "stddev": 0.0,
+          "min": 4736,
+          "max": 4736,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "stddev": 5.561774297230456,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 9,
+          "stddev": 5.163977794943222,
+          "min": 1,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1046,
+          "stddev": 5.163977794943222,
+          "min": 1040,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "stddev": 5.561774297230456,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9838888888888889,
+          "stddev": 0.008764562641629062,
+          "min": 0.9731481481481481,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "stddev": 0.19661487076873765,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "stddev": 0.22247097188921824,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "stddev": 0.19673781052097572,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "stddev": 5.561774297230456,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "total_events": 10,
+      "detected_events": 10,
+      "missed_events": 0,
+      "pooled_detection_delay_s": 8.4
+    },
+    {
+      "name": "hybrid",
+      "metrics": {
+        "poll_transactions": {
+          "mean": 45,
+          "stddev": 0.0,
+          "min": 45,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 90,
+          "stddev": 0.0,
+          "min": 90,
+          "max": 90,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 82,
+          "stddev": 0.0,
+          "min": 82,
+          "max": 82,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 5504,
+          "stddev": 0.0,
+          "min": 5504,
+          "max": 5504,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "stddev": 5.561774297230456,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 6.6,
+          "stddev": 5.561774297230456,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1048.4,
+          "stddev": 5.561774297230456,
+          "min": 1040,
+          "max": 1055,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "stddev": 5.561774297230456,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9861111111111112,
+          "stddev": 0.0074074074074074025,
+          "min": 0.975,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.75,
+          "stddev": 0.1868032110466638,
+          "min": 0.4642857142857143,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "stddev": 0.22247097188921824,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6802651708312086,
+          "stddev": 0.16313104761352132,
+          "min": 0.49056603773584906,
+          "max": 0.9433962264150944,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "stddev": 5.561774297230456,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "total_events": 10,
+      "detected_events": 10,
+      "missed_events": 0,
+      "pooled_detection_delay_s": 8.4
+    },
+    {
+      "name": "audited_hybrid",
+      "metrics": {
+        "poll_transactions": {
+          "mean": 107.6,
+          "stddev": 0.5163977794943223,
+          "min": 107,
+          "max": 108,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 215.2,
+          "stddev": 1.0327955589886446,
+          "min": 214,
+          "max": 216,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 144,
+          "stddev": 0.0,
+          "min": 144,
+          "max": 144,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 11494.4,
+          "stddev": 33.04945788763663,
+          "min": 11456,
+          "max": 11520,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "stddev": 2.0655911179772892,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 4.2,
+          "stddev": 2.5298221281347035,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1050.8,
+          "stddev": 2.5298221281347035,
+          "min": 1048,
+          "max": 1055,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "stddev": 2.0655911179772892,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9927777777777778,
+          "stddev": 0.0023424278964210114,
+          "min": 0.9898148148148148,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.8457142857142858,
+          "stddev": 0.08599161484196731,
+          "min": 0.75,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "stddev": 0.08262364471909157,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8457861635220126,
+          "stddev": 0.04788807390718417,
+          "min": 0.7924528301886793,
+          "max": 0.9433962264150944,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "stddev": 2.0655911179772892,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "stddev": 0.0,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "total_events": 10,
+      "detected_events": 10,
+      "missed_events": 0,
+      "pooled_detection_delay_s": 3.6
+    }
+  ],
+  "notes": "Per-seed macro means; sample standard deviation (not confidence intervals). Undefined values excluded with counts. Pooled delay uses detected events only. Preset onset varies with seed; custom onset is fixed."
+}

@@ -1,15 +1,15 @@
 'use strict';
 const $ = id => document.getElementById(id);
-const labels = {fixed:'Fixed flow',fixed_path:'Fixed path batch',flow_adaptive:'Adaptive flow',path_adaptive:'Adaptive path',hybrid:'Hybrid path-to-flow'};
-const scenarios = {single:'Single-flow spike',simultaneous:'Simultaneous spikes',offsetting:'Offsetting changes'};
-const colors = ['#8a9b9a','#697aae','#c79158','#379b87','#174b40'];
+const labels = {fixed:'Fixed flow',fixed_path:'Fixed path batch',flow_adaptive:'Adaptive flow',path_adaptive:'Adaptive path',hybrid:'Hybrid path-to-flow',audited_hybrid:'Hybrid + periodic audit'};
+const scenarios = {single:'Single-flow spike',simultaneous:'Simultaneous spikes',offsetting:'Offsetting changes',custom:'Custom spikes'};
+const colors = ['#8a9b9a','#697aae','#c79158','#379b87','#174b40','#9871b7'];
 const state = {data:null,tab:'topology',path:'p0',time:0,flow:'f0',page:0,timer:null,charts:{},busy:false};
 const num = (v,d=0) => v === null || v === undefined ? 'N/A' : Number(v).toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d});
 const result = () => state.data.results.find(r=>r.name===state.data.config.policy);
 const truth = (flow,t) => state.data.trace.events.some(e=>e.flow===flow&&e.start<=t&&t<e.end);
 const members = path => state.data.trace.flows.filter(f=>f.path===path);
 function modeAt(path,t){
-  if(state.data.config.policy!=='hybrid') return state.data.config.policy.includes('path')?'Path batch':'Individual flow';
+  if(!state.data.config.policy.includes('hybrid')) return state.data.config.policy.includes('path')?'Path batch':'Individual flow';
   let mode='path';
   for(const change of result().transitions) if(change.path===path&&change.time<=t) mode=change.mode;
   return mode==='path'?'Path batch':'Fast individual';
@@ -22,25 +22,27 @@ async function api(url,config){
     throw new Error(message);}
   return response;
 }
-function currentConfig(){return {policy:$('policy').value,scenario:$('scenario').value,seed:Number($('seed').value),flow_count:Number($('flow-count').value)};}
+function currentConfig(){return {policy:$('policy').value,scenario:$('scenario').value,seed:Number($('seed').value),flow_count:Number($('flow-count').value),...(typeof advancedConfig==='function'?advancedConfig():{})};}
 async function runSimulation(event){
   if(event)event.preventDefault();
   if(state.busy||!$('config-form').reportValidity())return;
   const config=currentConfig();state.busy=true;pause();$('error').hidden=true;
-  $('run-button').textContent='Running…';$('status').textContent='Computing all five policies on one shared traffic trace…';
+  document.dispatchEvent(new Event('runstarting'));
+  $('run-button').textContent='Running…';$('status').textContent='Computing all six policies on one shared traffic trace…';
   $('run-state').textContent='Running';
   [...$('config-form').elements].forEach(e=>e.disabled=true);
   try{
     state.data=await (await api('/api/run',config)).json();
     state.time=0;state.path='p0';state.flow='f0';state.page=0;$('time').value=0;
     $('run-state').textContent='Run complete';$('run-id').textContent='#'+state.data.run_id;
-    $('status').textContent=`Loaded: ${labels[config.policy]} · ${scenarios[config.scenario]} · seed ${config.seed} · ${config.flow_count} flows. All five policies use this trace.`;
+    $('status').textContent=`Loaded: ${labels[config.policy]} · ${scenarios[config.scenario]} · seed ${config.seed} · ${config.flow_count} flows. All six policies use this trace.`;
     const options=state.data.trace.flows.map(f=>`<option value="${f.name}">${f.name.toUpperCase()} · ${f.path.toUpperCase()}</option>`).join('');
     $('inspect-flow').innerHTML=options;$('log-flow').innerHTML='<option value="all">All flows</option>'+options;
     renderMetrics();renderTopology();renderActive();
     document.querySelectorAll('[data-export]').forEach(b=>b.disabled=false);
+    document.dispatchEvent(new Event('runloaded'));
   }catch(error){showError(error);$('status').textContent=state.data?'Run failed. The previous loaded results remain on screen.':'Run failed. Check the local server and try again.';$('run-state').textContent='Run failed';}
-  finally{state.busy=false;$('run-button').innerHTML='<span>▶</span> Run simulation';[...$('config-form').elements].forEach(e=>e.disabled=false);}
+  finally{state.busy=false;$('run-button').innerHTML='<span>▶</span> Run simulation';[...$('config-form').elements].forEach(e=>e.disabled=false);document.dispatchEvent(new Event('runfinished'));}
 }
 function renderMetrics(){
   const m=result().metrics;
@@ -132,14 +134,15 @@ function renderSimulation(){
   replaceChart('poll-chart',{type:'bar',data:{labels:times,datasets:[
     {label:'Transactions',data:polls.map(ps=>ps.length),backgroundColor:'#31967b'},
     {label:'Returned records',data:polls.map(ps=>ps.reduce((s,p)=>s+p.flows.length,0)),backgroundColor:'#a3cdbb'}]},options:baseOptions('Count / second')});
-  if(state.data.config.policy!=='hybrid'){
+  if(!state.data.config.policy.includes('hybrid')){
     $('mode-timeline').innerHTML='<p class="mode-caption">This policy does not switch between path and flow modes. Its polling activity is shown above.</p>';return;
   }
   $('mode-timeline').innerHTML=Object.keys(trace.paths).map(p=>{
     const changes=[{time:0,mode:'path'},...r.transitions.filter(c=>c.path===p),{time:trace.duration,mode:'end'}];
     return `<div class="mode-row"><code>${p.toUpperCase()}</code><div class="mode-track">${changes.slice(0,-1).map((c,i)=>`<div class="mode-segment ${c.mode==='flow'?'fast':''}" style="width:${(changes[i+1].time-c.time)/trace.duration*100}%" title="${p}: ${c.mode} mode, ${c.time}–${changes[i+1].time} s"></div>`).join('')}</div></div>`;
   }).join('')+`<p class="mode-caption">Green: path batches · Purple: fast individual polls · Dashed vertical traffic-chart lines: mode switches on ${path.toUpperCase()}.</p>`+
-    `<p class="mode-caption">${r.transitions.length?r.transitions.map(c=>`${c.path.toUpperCase()} → ${c.mode} at ${c.time}s`).join(' · '):'No mode switches in this run. Aggregate changes never triggered flow mode.'}</p>`;
+    `<p class="mode-caption">${r.transitions.length?r.transitions.map(c=>`${c.path.toUpperCase()} → ${c.mode} at ${c.time}s${c.reason?' ('+c.reason+')':''}`).join(' · '):'No mode switches in this run.'}</p>`+
+    (r.audits?.length?`<details class="mode-caption"><summary>${r.audits.length} audit observations · expand sampling details</summary><p>${r.audits.map(a=>`${a.path.toUpperCase()} at ${a.time}s (${a.source==='reused_batch'?'reused batch':'charged individual polls'}${a.changed?', change detected':''})`).join(' · ')}</p></details>`:'');
 }
 function comparisonChart(id,metric){
   const ratios=['f1','recall'].includes(metric);
@@ -165,7 +168,7 @@ function renderComparison(){
 }
 function renderLogs(){
   const c=state.data.config,s=state.data.settings,r=result();
-  const configRows=[['Run ID',state.data.run_id],['Scenario',scenarios[c.scenario]],['Selected policy',labels[c.policy]],['Seed',c.seed],['Workload',c.flow_count+' flows'],['Duration','180 seconds'],['Fixed / minimum / maximum',`${s.fixed_interval} / ${s.minimum} / ${s.maximum} s`],['Change threshold',num(s.change_threshold*100)+'%'],['Alarm threshold',s.alarm_multiplier+' × reference'],['Hybrid stable rounds','2'],['Additional flows',c.flow_count>6?'Healthy background':'None']];
+  const configRows=[['Run ID',state.data.run_id],['Scenario',scenarios[c.scenario]],['Selected policy',labels[c.policy]],['Seed',c.seed],['Workload',c.flow_count+' flows'],['Duration','180 seconds'],['Fixed / minimum / maximum',`${s.fixed_interval} / ${s.minimum} / ${s.maximum} s`],['Change threshold',num(s.change_threshold*100)+'%'],['Alarm threshold',s.alarm_multiplier+' × reference'],['Hybrid stable rounds','2'],['Audit interval',c.audit_interval+' s'],['Custom events',c.custom_events?c.custom_events.map(e=>`${e.flow}: ${e.start}–${e.start+e.duration}s ×${e.multiplier}`).join('; '):'None'],['Additional flows',c.flow_count>6?'Healthy unless customized':'None']];
   $('configuration').innerHTML=configRows.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('');
   $('event-outcomes').innerHTML=r.events.map(e=>`<div class="event-outcome"><div><strong>${e.flow.toUpperCase()}</strong><small>Ground truth: [${e.start}, ${e.end}) s</small></div><div><span class="pill ${e.delay_s===null?'alert':''}">${e.delay_s===null?'Missed':e.delay_s+' s delay'}</span><small>${e.delay_s===null?'No positive in-event sample':'Detected at '+(e.start+e.delay_s)+' s'}</small></div></div>`).join('');
   renderPollLog();
@@ -179,7 +182,6 @@ function renderPollLog(){
   $('log-count').textContent=rows.length?`${start+1}–${Math.min(start+size,rows.length)} of ${rows.length} transactions`:'No transactions';
   $('prev-page').disabled=state.page===0;$('next-page').disabled=start+size>=rows.length;
 }
-const titles={topology:['A clear view of your network.','Follow traffic, inspect paths, and see how monitoring adapts.'],simulation:['Watch the policy at work.','Separate the traffic that happened from what the monitor observed.'],comparison:['Measure the trade-offs.','Compare collection cost and detection quality on identical traffic.'],logs:['Every result has a trail.','Inspect configurations, event outcomes, and the complete polling record.']};
 function renderActive(){if(!state.data)return;if(state.tab==='simulation')renderSimulation();if(state.tab==='comparison')renderComparison();if(state.tab==='logs')renderLogs();}
 function switchTab(tab){
   pause();state.tab=tab;
@@ -187,7 +189,8 @@ function switchTab(tab){
   document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=p.id!=='tab-'+tab);
   document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===tab);if(b.dataset.tab===tab)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
   $('breadcrumb').textContent=tab==='logs'?'Experiments & Logs':tab[0].toUpperCase()+tab.slice(1);
-  $('page-title').textContent=titles[tab][0];$('page-subtitle').textContent=titles[tab][1];renderActive();
+  $('page-title').textContent=$('breadcrumb').textContent;renderActive();
+  document.dispatchEvent(new Event('tabchanged'));
 }
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
 $('config-form').addEventListener('submit',runSimulation);

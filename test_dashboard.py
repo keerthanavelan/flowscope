@@ -26,7 +26,7 @@ class DashboardTests(unittest.TestCase):
         payload = response.get_json()
         actual = next(r for r in payload['results'] if r['name'] == 'hybrid')
         self.assertEqual({k: actual[k] for k in expected}, expected)
-        self.assertEqual(len(payload['results']), 5)
+        self.assertEqual(len(payload['results']), 6)
         self.assertEqual(payload, self.client.post('/api/run', json=self.config).get_json())
 
     def test_expanded_trace_preserves_original_flows(self):
@@ -71,7 +71,7 @@ class DashboardTests(unittest.TestCase):
         response = self.client.post('/api/export/metrics', json=self.config)
         self.assertIn('attachment', response.headers['Content-Disposition'])
         rows = list(csv.DictReader(io.StringIO(response.get_data(as_text=True))))
-        self.assertEqual(len(rows), 5)
+        self.assertEqual(len(rows), 6)
         for row, result in zip(rows, payload['results']):
             self.assertEqual(int(row['modeled_bytes']), result['metrics']['modeled_bytes'])
         response = self.client.post('/api/export/polls', json=self.config)
@@ -90,7 +90,7 @@ class DashboardTests(unittest.TestCase):
         for path in ('/static/style.css', '/static/app.js', '/static/vendor/chart.umd.min.js'):
             with self.client.get(path) as asset:
                 self.assertEqual(asset.status_code, 200)
-        self.assertEqual(len(self.client.get('/api/meta').get_json()['policies']), 5)
+        self.assertEqual(len(self.client.get('/api/meta').get_json()['policies']), 6)
 
 
 if __name__ == '__main__':

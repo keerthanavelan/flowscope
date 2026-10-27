@@ -1,0 +1,11 @@
+SYNTHETIC paired study — not real SDN measurements
+Config: {'scenario': 'simultaneous', 'seed': 7, 'flow_count': 6, 'policy': 'audited_hybrid', 'audit_interval': 8}
+Seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+policy                mean_bytes   mean_F1   mean_delay_s  missed/total
+fixed                     13248.0     0.859          3.600  0/30
+fixed_path                 8832.0     0.859          3.600  0/30
+flow_adaptive              7200.0     0.652          8.400  0/30
+path_adaptive              4864.0     0.652          8.400  0/30
+hybrid                     6400.0     0.680          8.400  0/30
+audited_hybrid            12044.8     0.846          3.600  0/30
+Per-seed macro means; sample standard deviation (not confidence intervals). Undefined values excluded with counts. Pooled delay uses detected events only. Preset onset varies with seed; custom onset is fixed.

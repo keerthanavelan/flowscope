@@ -5,34 +5,42 @@
   <title>FlowScope · SDN Monitoring Lab</title>
   <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/research.css">
+  <link rel="stylesheet" href="/static/sidebar.css">
   <script defer src="/static/vendor/chart.umd.min.js"></script>
+  <script defer src="/static/sidebar.js"></script>
   <script defer src="/static/app.js"></script>
+  <script defer src="/static/research.js"></script>
 </head>
 <body>
 <aside class="sidebar">
-  <a class="brand" href="/"><span class="brand-mark">⌘</span><span>FlowScope<span class="brand-sub">NETWORK RESEARCH LAB</span></span></a>
-  <div class="workspace"><span class="workspace-icon">N</span><div>SDN monitoring<span>Adaptive collection study</span></div><span class="workspace-dot"></span></div>
-  <div class="nav-caption">WORKSPACE</div>
-  <nav aria-label="Main navigation">
-    <button class="nav-item active" data-tab="topology" aria-current="page"><span>◇</span>Topology<span class="nav-index">01</span></button>
-    <button class="nav-item" data-tab="simulation"><span>⌁</span>Simulation<span class="nav-index">02</span></button>
-    <button class="nav-item" data-tab="comparison"><span>▥</span>Comparison<span class="nav-index">03</span></button>
-    <button class="nav-item" data-tab="logs"><span>≡</span>Experiments & Logs<span class="nav-index">04</span></button>
+  <div class="sidebar-header">
+    <a class="brand" href="/" aria-label="FlowScope home"><span class="brand-mark" aria-hidden="true">⌘</span><span class="brand-name">FlowScope</span></a>
+    <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Collapse navigation" aria-expanded="true" aria-controls="main-navigation" title="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6M20 5v14"/></svg></button>
+  </div>
+  <nav id="main-navigation" aria-label="Main navigation">
+    <button class="nav-item active" data-tab="topology" aria-current="page" aria-label="Topology" title="Topology"><span aria-hidden="true">◇</span><span class="nav-label">Topology</span></button>
+    <button class="nav-item" data-tab="simulation" aria-label="Simulation" title="Simulation"><span aria-hidden="true">⌁</span><span class="nav-label">Simulation</span></button>
+    <button class="nav-item" data-tab="comparison" aria-label="Comparison" title="Comparison"><span aria-hidden="true">▥</span><span class="nav-label">Comparison</span></button>
+    <button class="nav-item" data-tab="logs" aria-label="Experiments & Logs" title="Experiments & Logs"><span aria-hidden="true">≡</span><span class="nav-label">Experiments & Logs</span></button>
   </nav>
-  <div class="sidebar-note"><div class="eyebrow">THE EXPERIMENT</div><h3>Less polling.<br>What’s the trade-off?</h3><p>Explore the balance between monitoring cost and anomaly detection.</p><div class="mini-rule"></div><span>5 policies · 3 scenarios</span></div>
-  <div class="sidebar-footer"><span class="status-dot"></span>Local simulation engine<small>Deterministic · No Mininet</small></div>
 </aside>
 <main>
   <header class="topbar"><div>Workspace <span>/</span> <strong id="breadcrumb">Topology</strong></div><span class="simulation-badge"><span class="status-dot"></span>SYNTHETIC SIMULATION</span></header>
   <div class="content">
-    <section class="page-heading"><div><div class="eyebrow">SDN OBSERVABILITY / EXPERIMENT WORKBENCH</div><h1 id="page-title">A clear view of your network.</h1><p id="page-subtitle">Follow traffic, inspect paths, and see how monitoring adapts.</p></div><div class="run-stamp"><span id="run-state">Waiting for engine</span><code id="run-id">—</code></div></section>
+    <section class="page-heading"><div><h1 id="page-title">Topology</h1></div><div class="run-stamp"><span id="run-state">Waiting for engine</span><code id="run-id">—</code></div></section>
     <form id="config-form" class="config-bar">
-      <label>Monitoring policy<select id="policy"><option value="hybrid">Hybrid path-to-flow</option><option value="fixed">Fixed flow</option><option value="fixed_path">Fixed path batch</option><option value="flow_adaptive">Adaptive flow</option><option value="path_adaptive">Adaptive path</option></select></label>
-      <label>Traffic scenario<select id="scenario"><option value="single">Single-flow spike</option><option value="simultaneous">Simultaneous spikes</option><option value="offsetting">Offsetting changes</option></select></label>
+      <label>Monitoring policy<select id="policy"><option value="hybrid">Hybrid path-to-flow</option><option value="audited_hybrid">Hybrid + periodic audit</option><option value="fixed">Fixed flow</option><option value="fixed_path">Fixed path batch</option><option value="flow_adaptive">Adaptive flow</option><option value="path_adaptive">Adaptive path</option></select></label>
+      <label>Traffic scenario<select id="scenario"><option value="single">Single-flow spike</option><option value="simultaneous">Simultaneous spikes</option><option value="offsetting">Offsetting changes</option><option value="custom">Custom spikes</option></select></label>
       <label class="seed-field">Seed<input id="seed" type="number" value="7" min="0" max="2147483647" step="1" required></label>
       <label>Workload<select id="flow-count"><option value="6">6 flows · original</option></select></label>
-      <button class="primary" id="run-button" type="submit"><span>▶</span> Run simulation</button>
+      <label class="seed-field">Audit interval (s)<input id="audit-interval" type="number" value="8" min="2" max="32" step="1" required></label><button class="primary" id="run-button" type="submit"><span>▶</span> Run simulation</button>
     </form>
+    <section id="custom-builder" class="card" hidden>
+      <div class="card-heading"><div><div class="eyebrow">SCENARIO BUILDER</div><h2>Custom events</h2></div><button id="add-event" class="secondary" type="button">+ Add spike</button></div>
+      
+      <div id="custom-events"></div>
+    </section>
     <div id="status" role="status" aria-live="polite">Connecting to the local engine…</div>
     <div id="error" role="alert" hidden></div>
     <div class="metrics" id="metrics"></div>
@@ -46,29 +54,42 @@
         </article>
         <article class="card inspector"><div class="eyebrow">PATH INSPECTOR</div><div class="inspector-title"><h2 id="path-title">Path 01</h2><span id="path-mode" class="pill">Batch mode</span></div><p id="path-route" class="mono"></p><div class="inspector-rate"><strong id="path-rate">—</strong><span>Mb/s aggregate · ground truth</span></div><div id="path-detail"></div><h3 class="small-title">Flows on this path</h3><div id="path-flows"></div><div class="inspector-note" id="selection-note">Select a path or switch to inspect its traffic.</div></article>
       </div>
-      <article class="card flow-card"><div class="card-heading"><div><div class="eyebrow">FLOW INVENTORY</div><h2>Every flow, accounted for.</h2></div><span class="tag">At replay time</span></div><div class="table-wrap"><table><thead><tr><th>Flow</th><th>Assigned path</th><th>Reference</th><th>Current rate</th><th>Ground truth</th><th>Monitor alarm</th><th>Last sample</th></tr></thead><tbody id="flow-table"></tbody></table></div></article>
+      <article class="card flow-card"><div class="card-heading"><div><div class="eyebrow">FLOW INVENTORY</div><h2>Flows</h2></div><span class="tag">At replay time</span></div><div class="table-wrap"><table><thead><tr><th>Flow</th><th>Assigned path</th><th>Reference</th><th>Current rate</th><th>Ground truth</th><th>Monitor alarm</th><th>Last sample</th></tr></thead><tbody id="flow-table"></tbody></table></div></article>
     </section>
 
     <section id="tab-simulation" class="tab-panel" hidden>
-      <div class="section-toolbar"><div><h2>Inside the simulation</h2><p>Sampled observations and ground truth, on the same timeline.</p></div><label>Inspect flow<select id="inspect-flow"></select></label></div>
+      <div class="section-toolbar"><div><h2>Simulation details</h2></div><label>Inspect flow<select id="inspect-flow"></select></label></div>
       <article class="card"><div class="card-heading"><div><div class="eyebrow">TRAFFIC & OBSERVATIONS</div><h2 id="traffic-title">Flow traffic</h2></div><span class="tag">180 simulated seconds</span></div><div class="chart-box tall"><canvas id="traffic-chart" role="img" aria-label="Flow traffic, detection threshold and polling samples"></canvas></div></article>
       <div class="two-column"><article class="card"><div class="card-heading"><div><div class="eyebrow">DETECTION</div><h2>Truth vs held alarm</h2></div></div><div class="chart-box"><canvas id="alarm-chart" role="img" aria-label="Ground truth and held alarm timeline"></canvas></div></article><article class="card"><div class="card-heading"><div><div class="eyebrow">COLLECTION SCHEDULE</div><h2>Polling activity</h2></div></div><div class="chart-box"><canvas id="poll-chart" role="img" aria-label="Transactions and returned records per second"></canvas></div></article></div>
-      <article class="card"><div class="card-heading"><div><div class="eyebrow">POLICY TRANSITIONS</div><h2>When monitoring changes gear</h2></div></div><div id="mode-timeline" class="mode-timeline"></div></article>
+      <article class="card"><div class="card-heading"><div><div class="eyebrow">POLICY TRANSITIONS</div><h2>Mode switches</h2></div></div><div id="mode-timeline" class="mode-timeline"></div></article>
     </section>
 
     <section id="tab-comparison" class="tab-panel" hidden>
-      <div class="section-toolbar"><div><h2>One trace. Five perspectives.</h2><p>Identical traffic and detector settings for every policy. Single-seed results.</p></div><span class="tag" id="comparison-config"></span></div>
-      <div class="two-column"><article class="card"><div class="card-heading"><div><div class="eyebrow">MONITORING COST</div><h2>How much do we collect?</h2></div><select id="cost-metric" aria-label="Overhead metric"><option value="modeled_bytes">Modeled bytes</option><option value="poll_transactions">Transactions</option><option value="messages">Messages</option><option value="records">Flow records</option></select></div><div class="chart-box"><canvas id="cost-chart" role="img" aria-label="Monitoring overhead by policy"></canvas></div></article><article class="card"><div class="card-heading"><div><div class="eyebrow">DETECTION QUALITY</div><h2>What does it catch?</h2></div><select id="quality-metric" aria-label="Detection metric"><option value="f1">F1 score</option><option value="recall">Recall</option><option value="mean_detection_delay_s">Detection delay (s)</option></select></div><div class="chart-box"><canvas id="quality-chart" role="img" aria-label="Detection quality by policy"></canvas></div></article></div>
-      <article class="card"><div class="card-heading"><h2>The full comparison</h2><button class="secondary" data-export="metrics">↓ Metrics CSV</button></div><div class="table-wrap"><table><thead><tr><th>Policy</th><th>Bytes</th><th>Transactions</th><th>Records</th><th>Recall</th><th>F1</th><th>Delay</th><th>Detected</th></tr></thead><tbody id="comparison-table"></tbody></table></div><p class="card-footnote">Delay averages detected events only. N/A means undefined, not zero. Bytes = 64 × transactions + 32 × records.</p></article>
+      <div class="section-toolbar"><div><h2>Policy comparison</h2></div><span class="tag" id="comparison-config"></span></div>
+      <div class="two-column"><article class="card"><div class="card-heading"><div><div class="eyebrow">MONITORING COST</div><h2>Monitoring cost</h2></div><select id="cost-metric" aria-label="Overhead metric"><option value="modeled_bytes">Modeled bytes</option><option value="poll_transactions">Transactions</option><option value="messages">Messages</option><option value="records">Flow records</option></select></div><div class="chart-box"><canvas id="cost-chart" role="img" aria-label="Monitoring overhead by policy"></canvas></div></article><article class="card"><div class="card-heading"><div><div class="eyebrow">DETECTION QUALITY</div><h2>Detection quality</h2></div><select id="quality-metric" aria-label="Detection metric"><option value="f1">F1 score</option><option value="recall">Recall</option><option value="mean_detection_delay_s">Detection delay (s)</option></select></div><div class="chart-box"><canvas id="quality-chart" role="img" aria-label="Detection quality by policy"></canvas></div></article></div>
+      <article class="card"><div class="card-heading"><h2>The full comparison</h2><button class="secondary" data-export="metrics">↓ Metrics CSV</button></div><div class="table-wrap"><table><thead><tr><th>Policy</th><th>Bytes</th><th>Transactions</th><th>Records</th><th>Recall</th><th>F1</th><th>Delay</th><th>Detected</th></tr></thead><tbody id="comparison-table"></tbody></table></div></article>
       <div id="comparison-insight" class="insight"></div>
+      <article class="card replay-card">
+        <div class="card-heading"><div><div class="eyebrow">SYNCHRONIZED POLICY REPLAY</div><h2>Side-by-side replay</h2></div><label>Inspect flow<select id="replay-flow"></select></label></div>
+        <div class="replay-controls"><label>Left policy<select id="replay-left"></select></label><label>Right policy<select id="replay-right"></select></label><button id="replay-play" class="secondary" type="button">▶ Play</button><input id="replay-time" type="range" min="0" max="179" value="0" aria-label="Side-by-side replay time"><code id="replay-clock">0 / 179 s</code></div>
+        <div id="replay-truth" class="insight"></div>
+        <div class="two-column replay-panels"><div id="replay-left-state" class="replay-state"></div><div id="replay-right-state" class="replay-state"></div></div>
+        <div class="chart-box"><canvas id="replay-chart" role="img" aria-label="Cumulative monitoring bytes for the two selected policies"></canvas></div>
+        
+      </article>
     </section>
 
     <section id="tab-logs" class="tab-panel" hidden>
-      <div class="section-toolbar"><div><h2>A traceable experiment.</h2><p>Inspect the loaded configuration and export the complete evidence.</p></div><div class="export-actions"><button class="secondary" data-export="json">↓ Full JSON</button><button class="secondary" data-export="polls">↓ Polls CSV</button></div></div>
+      <article class="card">
+        <div class="card-heading"><div><div class="eyebrow">PAIRED MULTI-SEED STUDY</div><h2>Multi-seed experiments</h2></div><span class="tag">2–30 distinct seeds</span></div>
+        <div class="experiment-controls"><label>Seeds (comma-separated)<input id="experiment-seeds" value="0,1,2,3,4,5,6,7,8,9" type="text"></label><button id="run-experiment" class="primary" type="button">Run experiment</button><label>Metric<select id="experiment-metric"><option value="f1">F1</option><option value="recall">Recall</option><option value="modeled_bytes">Modeled bytes</option><option value="mean_detection_delay_s">Detection delay</option></select></label><button id="experiment-json" class="secondary" disabled>↓ Study JSON</button><button id="experiment-csv" class="secondary" disabled>↓ Study CSV</button></div>
+        <p id="experiment-status" class="card-footnote" role="status">Uses the loaded run’s scenario, workload, custom events and audit interval. Each seed is shared by all six policies.</p>
+        <div id="experiment-results" hidden><div class="chart-box"><canvas id="experiment-chart" role="img" aria-label="Multi-seed means and standard deviations"></canvas></div><div class="table-wrap"><table><thead><tr><th>Policy</th><th>Bytes mean ± SD</th><th>F1 mean ± SD</th><th>Recall mean ± SD</th><th>Delay mean ± SD</th><th>Delay runs</th><th>Missed events</th></tr></thead><tbody id="experiment-table"></tbody></table></div></div>
+      </article>
+      <div class="section-toolbar"><div><h2>Run details</h2></div><div class="export-actions"><button class="secondary" data-export="json">↓ Full JSON</button><button class="secondary" data-export="polls">↓ Polls CSV</button></div></div>
       <div class="two-column"><article class="card"><div class="card-heading"><h2>Run configuration</h2><span class="tag">Reproducible</span></div><dl id="configuration" class="configuration"></dl></article><article class="card"><div class="card-heading"><h2>Event outcomes</h2><span class="tag">Selected policy</span></div><div id="event-outcomes"></div></article></div>
-      <article class="card"><div class="card-heading"><div><div class="eyebrow">TRANSACTION LOG</div><h2>Every request has a cost.</h2></div><label>Flow filter<select id="log-flow"><option value="all">All flows</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Group</th><th>Flows returned</th><th>Records</th><th>Messages</th><th>Modeled bytes</th></tr></thead><tbody id="poll-log"></tbody></table></div><div class="pagination"><span id="log-count"></span><div><button id="prev-page" class="secondary">← Previous</button><button id="next-page" class="secondary">Next →</button></div></div></article>
+      <article class="card"><div class="card-heading"><div><div class="eyebrow">TRANSACTION LOG</div><h2>Polling logs</h2></div><label>Flow filter<select id="log-flow"><option value="all">All flows</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Group</th><th>Flows returned</th><th>Records</th><th>Messages</th><th>Modeled bytes</th></tr></thead><tbody id="poll-log"></tbody></table></div><div class="pagination"><span id="log-count"></span><div><button id="prev-page" class="secondary">← Previous</button><button id="next-page" class="secondary">Next →</button></div></div></article>
     </section>
-    <footer class="page-footer"><span>FlowScope / SDN monitoring lab</span><span>Simulated rates · Known references · Zero response latency</span></footer>
   </div>
 </main>
 </body></html>

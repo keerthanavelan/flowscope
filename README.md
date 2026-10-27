@@ -1,3 +1,7 @@
+# Current dashboard and research features
+
+See [RESEARCH_FEATURES.md](RESEARCH_FEATURES.md) for custom scenarios, the sixth audited-hybrid policy, paired multi-seed experiments, synchronized replay, and current setup commands. The original minimal prototype documentation follows.
+
 # Adaptive statistics collection: minimal SDN simulation
 
 This is a synthetic discrete-time experiment, not a real controller or a measurement of an SDN deployment. No Mininet, network access, third-party Python packages, or installation is required. Use Python 3.10 or later.

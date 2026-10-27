@@ -1,0 +1,1402 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "scenarios": {
+    "single": {
+      "fixed": {
+        "poll_transactions": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 276,
+          "min": 276,
+          "max": 276,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 13248,
+          "min": 13248,
+          "max": 13248,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 3.4,
+          "min": 1,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1051.6,
+          "min": 1048,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9935185185185185,
+          "min": 0.9879629629629629,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "fixed_path": {
+        "poll_transactions": {
+          "mean": 69,
+          "min": 69,
+          "max": 69,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 8832,
+          "min": 8832,
+          "max": 8832,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 3.4,
+          "min": 1,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1051.6,
+          "min": 1048,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9935185185185185,
+          "min": 0.9879629629629629,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "flow_adaptive": {
+        "poll_transactions": {
+          "mean": 73,
+          "min": 73,
+          "max": 73,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 146,
+          "min": 146,
+          "max": 146,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 73,
+          "min": 73,
+          "max": 73,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 7008,
+          "min": 7008,
+          "max": 7008,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 9,
+          "min": 1,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1046,
+          "min": 1040,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9838888888888889,
+          "min": 0.9731481481481481,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "path_adaptive": {
+        "poll_transactions": {
+          "mean": 37,
+          "min": 37,
+          "max": 37,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 74,
+          "min": 74,
+          "max": 74,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 74,
+          "min": 74,
+          "max": 74,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 4736,
+          "min": 4736,
+          "max": 4736,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 9,
+          "min": 1,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1046,
+          "min": 1040,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9838888888888889,
+          "min": 0.9731481481481481,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "hybrid": {
+        "poll_transactions": {
+          "mean": 45,
+          "min": 45,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 90,
+          "min": 90,
+          "max": 90,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 82,
+          "min": 82,
+          "max": 82,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 5504,
+          "min": 5504,
+          "max": 5504,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 6.6,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1048.4,
+          "min": 1040,
+          "max": 1055,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9861111111111112,
+          "min": 0.975,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.75,
+          "min": 0.4642857142857143,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6802651708312086,
+          "min": 0.49056603773584906,
+          "max": 0.9433962264150944,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      }
+    },
+    "simultaneous": {
+      "fixed": {
+        "poll_transactions": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 276,
+          "min": 276,
+          "max": 276,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 13248,
+          "min": 13248,
+          "max": 13248,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 64.2,
+          "min": 54,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 10.2,
+          "min": 3,
+          "max": 21,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 994.8,
+          "min": 984,
+          "max": 1002,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 10.8,
+          "min": 0,
+          "max": 21,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9805555555555555,
+          "min": 0.9638888888888889,
+          "max": 0.9916666666666667,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        }
+      },
+      "fixed_path": {
+        "poll_transactions": {
+          "mean": 69,
+          "min": 69,
+          "max": 69,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 8832,
+          "min": 8832,
+          "max": 8832,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 64.2,
+          "min": 54,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 10.2,
+          "min": 3,
+          "max": 21,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 994.8,
+          "min": 984,
+          "max": 1002,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 10.8,
+          "min": 0,
+          "max": 21,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9805555555555555,
+          "min": 0.9638888888888889,
+          "max": 0.9916666666666667,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        }
+      },
+      "flow_adaptive": {
+        "poll_transactions": {
+          "mean": 75,
+          "min": 75,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 150,
+          "min": 150,
+          "max": 150,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 75,
+          "min": 75,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 7200,
+          "min": 7200,
+          "max": 7200,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 49.8,
+          "min": 30,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 27,
+          "min": 3,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 978,
+          "min": 960,
+          "max": 1002,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 25.2,
+          "min": 0,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9516666666666667,
+          "min": 0.9194444444444444,
+          "max": 0.9916666666666667,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        }
+      },
+      "path_adaptive": {
+        "poll_transactions": {
+          "mean": 38,
+          "min": 38,
+          "max": 38,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 76,
+          "min": 76,
+          "max": 76,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 76,
+          "min": 76,
+          "max": 76,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 4864,
+          "min": 4864,
+          "max": 4864,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 49.8,
+          "min": 30,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 27,
+          "min": 3,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 978,
+          "min": 960,
+          "max": 1002,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 25.2,
+          "min": 0,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9516666666666667,
+          "min": 0.9194444444444444,
+          "max": 0.9916666666666667,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        }
+      },
+      "hybrid": {
+        "poll_transactions": {
+          "mean": 54,
+          "min": 54,
+          "max": 54,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 108,
+          "min": 108,
+          "max": 108,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 92,
+          "min": 92,
+          "max": 92,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 6400,
+          "min": 6400,
+          "max": 6400,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 49.8,
+          "min": 30,
+          "max": 75,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 19.8,
+          "min": 0,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 985.2,
+          "min": 960,
+          "max": 1005,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 25.2,
+          "min": 0,
+          "max": 45,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9583333333333334,
+          "min": 0.925,
+          "max": 0.9916666666666667,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.75,
+          "min": 0.4642857142857143,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6802651708312086,
+          "min": 0.49056603773584906,
+          "max": 0.9433962264150944,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 3,
+          "min": 3,
+          "max": 3,
+          "defined_runs": 10
+        }
+      }
+    },
+    "offsetting": {
+      "fixed": {
+        "poll_transactions": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 276,
+          "min": 276,
+          "max": 276,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 13248,
+          "min": 13248,
+          "max": 13248,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 3.4,
+          "min": 1,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1051.6,
+          "min": 1048,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9935185185185185,
+          "min": 0.9879629629629629,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "fixed_path": {
+        "poll_transactions": {
+          "mean": 69,
+          "min": 69,
+          "max": 69,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 138,
+          "min": 138,
+          "max": 138,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 8832,
+          "min": 8832,
+          "max": 8832,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 21.4,
+          "min": 18,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 3.4,
+          "min": 1,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1051.6,
+          "min": 1048,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 3.6,
+          "min": 0,
+          "max": 7,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9935185185185185,
+          "min": 0.9879629629629629,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.865625,
+          "min": 0.75,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.856,
+          "min": 0.72,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.8591478696741854,
+          "min": 0.7346938775510204,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 3.6,
+          "min": 0.0,
+          "max": 7.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "flow_adaptive": {
+        "poll_transactions": {
+          "mean": 74,
+          "min": 74,
+          "max": 74,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 148,
+          "min": 148,
+          "max": 148,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 74,
+          "min": 74,
+          "max": 74,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 7104,
+          "min": 7104,
+          "max": 7104,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 9,
+          "min": 1,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1046,
+          "min": 1040,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9838888888888889,
+          "min": 0.9731481481481481,
+          "max": 0.9972222222222222,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.65,
+          "min": 0.4166666666666667,
+          "max": 0.9583333333333334,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6524332810047095,
+          "min": 0.40816326530612246,
+          "max": 0.9387755102040817,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "path_adaptive": {
+        "poll_transactions": {
+          "mean": 36,
+          "min": 36,
+          "max": 36,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 72,
+          "min": 72,
+          "max": 72,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 72,
+          "min": 72,
+          "max": 72,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 4608,
+          "min": 4608,
+          "max": 4608,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 5.8,
+          "min": 1,
+          "max": 11,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1049.2,
+          "min": 1044,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9868518518518519,
+          "min": 0.9805555555555555,
+          "max": 0.9935185185185185,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.753125,
+          "min": 0.625,
+          "max": 0.9375,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6851519041506204,
+          "min": 0.4878048780487805,
+          "max": 0.8771929824561403,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      },
+      "hybrid": {
+        "poll_transactions": {
+          "mean": 36,
+          "min": 36,
+          "max": 36,
+          "defined_runs": 10
+        },
+        "messages": {
+          "mean": 72,
+          "min": 72,
+          "max": 72,
+          "defined_runs": 10
+        },
+        "records": {
+          "mean": 72,
+          "min": 72,
+          "max": 72,
+          "defined_runs": 10
+        },
+        "modeled_bytes": {
+          "mean": 4608,
+          "min": 4608,
+          "max": 4608,
+          "defined_runs": 10
+        },
+        "tp": {
+          "mean": 16.6,
+          "min": 10,
+          "max": 25,
+          "defined_runs": 10
+        },
+        "fp": {
+          "mean": 5.8,
+          "min": 1,
+          "max": 11,
+          "defined_runs": 10
+        },
+        "tn": {
+          "mean": 1049.2,
+          "min": 1044,
+          "max": 1054,
+          "defined_runs": 10
+        },
+        "fn": {
+          "mean": 8.4,
+          "min": 0,
+          "max": 15,
+          "defined_runs": 10
+        },
+        "accuracy": {
+          "mean": 0.9868518518518519,
+          "min": 0.9805555555555555,
+          "max": 0.9935185185185185,
+          "defined_runs": 10
+        },
+        "precision": {
+          "mean": 0.753125,
+          "min": 0.625,
+          "max": 0.9375,
+          "defined_runs": 10
+        },
+        "recall": {
+          "mean": 0.664,
+          "min": 0.4,
+          "max": 1.0,
+          "defined_runs": 10
+        },
+        "f1": {
+          "mean": 0.6851519041506204,
+          "min": 0.4878048780487805,
+          "max": 0.8771929824561403,
+          "defined_runs": 10
+        },
+        "mean_detection_delay_s": {
+          "mean": 8.4,
+          "min": 0.0,
+          "max": 15.0,
+          "defined_runs": 10
+        },
+        "detected_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        },
+        "total_events": {
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "defined_runs": 10
+        }
+      }
+    }
+  }
+}

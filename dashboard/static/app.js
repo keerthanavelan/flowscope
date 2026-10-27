@@ -183,6 +183,7 @@ const titles={topology:['A clear view of your network.','Follow traffic, inspect
 function renderActive(){if(!state.data)return;if(state.tab==='simulation')renderSimulation();if(state.tab==='comparison')renderComparison();if(state.tab==='logs')renderLogs();}
 function switchTab(tab){
   pause();state.tab=tab;
+  $('metrics').hidden = tab !== 'topology';
   document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=p.id!=='tab-'+tab);
   document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===tab);if(b.dataset.tab===tab)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
   $('breadcrumb').textContent=tab==='logs'?'Experiments & Logs':tab[0].toUpperCase()+tab.slice(1);

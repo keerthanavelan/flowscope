@@ -45,7 +45,17 @@ class Hybrid(PathAdaptive):
     def observe(self, key, t, values):
         if key in self.paths:
             total = sum(values.values())
-            trigger = key in self.previous and self.changed(self.previous[key], total)
+            aggregate_trigger = (
+                key in self.previous
+                and self.changed(self.previous[key], total)
+            )
+            # Per-flow checks catch changes hidden by cancellation in the path sum.
+            previous_values = self.last_values.get(key)
+            flow_trigger = previous_values is not None and any(
+                self.changed(previous_values[flow], values[flow])
+                for flow in self.paths[key]
+            )
+            trigger = aggregate_trigger or flow_trigger
             super().observe(key, t, values)
             self.last_values[key] = dict(values)
             if trigger:

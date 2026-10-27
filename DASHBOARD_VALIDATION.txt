@@ -1,0 +1,26 @@
+FlowScope dashboard validation — 2026-10-24
+
+Python 3.12.14; Flask 3.1.2; Chart.js 4.5.1; Microsoft Edge headless.
+
+PASS: 20 Python unit/API tests (14 existing + 6 dashboard tests).
+PASS: JavaScript syntax check.
+PASS: Original hybrid output exactly matches the existing evaluator.
+PASS: 12-, 16- and 20-flow traces retain all original flow values and event times.
+PASS: CSV transaction totals reconcile with JSON records, messages and bytes.
+PASS: Repeated API runs produce identical JSON.
+PASS: All 70 pre-existing non-cache source, documentation and result files retain their original SHA-256 hashes.
+PASS: Browser navigation across all four tabs and Chart.js rendering.
+PASS: Topology switch/path selection; replay at 72s shows actual hybrid flow mode.
+PASS: Flow chart selector, comparison metric selectors, log pagination/filtering.
+PASS: Browser JSON download contains the loaded configuration and all five results.
+PASS: Scenario, seed and 20-flow controls execute a new real simulation.
+PASS: Desktop 1440px and mobile 390px layouts; no page-level horizontal overflow.
+PASS: No JavaScript page errors in the browser smoke sequence.
+PASS: Bundled Python successfully creates a virtual environment using the documented setup command.
+
+dashboard-preview.png is a real browser capture of seed 7, single spike, six flows,
+hybrid policy at replay time 72s. It is not a design mockup.
+
+Not claimed: real SDN performance, production hosting readiness, exhaustive browser
+compatibility, or general superiority of any policy. Chart.js assets are local;
+Python packages must be installed once before offline demo use.

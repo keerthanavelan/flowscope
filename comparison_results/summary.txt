@@ -1,0 +1,36 @@
+SYNTHETIC SDN COMPARISON (not real measurements)
+Seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; 180 seconds per trace.
+Values are means over seeds. Delay excludes missed events.
+Each policy receives the identical trace for a scenario/seed.
+
+single
+policy             polls  records    bytes  delay_s  accuracy     F1  events
+fixed              138.0    138.0  13248.0     3.60    0.9935  0.859 10/10
+fixed_path          69.0    138.0   8832.0     3.60    0.9935  0.859 10/10
+flow_adaptive       73.0     73.0   7008.0     8.40    0.9839  0.652 10/10
+path_adaptive       37.0     74.0   4736.0     8.40    0.9839  0.652 10/10
+hybrid              45.0     82.0   5504.0     8.40    0.9861  0.680 10/10
+
+simultaneous
+policy             polls  records    bytes  delay_s  accuracy     F1  events
+fixed              138.0    138.0  13248.0     3.60    0.9806  0.859 30/30
+fixed_path          69.0    138.0   8832.0     3.60    0.9806  0.859 30/30
+flow_adaptive       75.0     75.0   7200.0     8.40    0.9517  0.652 30/30
+path_adaptive       38.0     76.0   4864.0     8.40    0.9517  0.652 30/30
+hybrid              54.0     92.0   6400.0     8.40    0.9583  0.680 30/30
+
+offsetting
+policy             polls  records    bytes  delay_s  accuracy     F1  events
+fixed              138.0    138.0  13248.0     3.60    0.9935  0.859 10/10
+fixed_path          69.0    138.0   8832.0     3.60    0.9935  0.859 10/10
+flow_adaptive       74.0     74.0   7104.0     8.40    0.9839  0.652 10/10
+path_adaptive       36.0     72.0   4608.0     8.40    0.9869  0.685 10/10
+hybrid              36.0     72.0   4608.0     8.40    0.9869  0.685 10/10
+
+Cost: 2 messages/poll; 64 bytes/poll + 32 bytes/returned record.
+Offsetting labels only the upward f0 anomaly; downward f1 change is not a target of the unchanged high-rate detector.
+Hybrid mode switches are local decisions, not extra network messages. All actual polls are counted.
+Ranges in plots show variation across seeds, not confidence intervals.
+Hybrid cannot improve initial detection before its triggering path observation.
+Exact cancellation may prevent flow-mode entry. No periodic audit was added.
+Synthetic batching, known references, instantaneous samples and zero latency remain assumptions.
